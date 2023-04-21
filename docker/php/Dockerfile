@@ -11,6 +11,7 @@ WORKDIR $DIR
 
 COPY --from=composer:2.5.5 /usr/bin/composer /usr/bin/composer
 
+RUN usermod -d /home/$USER $USER
 RUN apt-get update && apt-get install -y \
     curl \
     zip \
